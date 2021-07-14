@@ -80,7 +80,7 @@ class RingBuilder(object):
             logger.info("error:", repr(e))
     
         added_dev = {dev_id: {Const.DEV_NAME:dev_name, Const.DEV_WEIGHT:dev_weight, Const.PART_NUM:part_num}}
-        self.data_manager.dev_inf.update(added_dev)
+        self.data_manager.dev_inf.update(added_dev)  # 跟新设备信息
         # rebalance
         virtual_node_num = dev_weight * part_num
         self.rebalance(dev_id, 
